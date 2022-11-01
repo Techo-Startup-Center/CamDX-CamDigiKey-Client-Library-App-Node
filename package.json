@@ -9,7 +9,7 @@
     "dev": "nodemon app.js"
   },
   "dependencies": {
-    "camdigikey-client": "https://github.com/Techo-Startup-Center/camdigikey-client-library-node",
+    "camdigikey-client": "./camdigikey-client-library-node",
     "dotenv": "^16.0.3",
     "express": "^4.18.2"
   },

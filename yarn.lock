@@ -128,9 +128,8 @@ call-bind@^1.0.0:
     function-bind "^1.1.1"
     get-intrinsic "^1.0.2"
 
-"camdigikey-client@https://github.com/Techo-Startup-Center/camdigikey-client-library-node":
+camdigikey-client@./camdigikey-client-library-node:
   version "2.0.0"
-  resolved "https://github.com/Techo-Startup-Center/camdigikey-client-library-node#aa8105ba0edcfb2495d479f50e6db43107b408ca"
   dependencies:
     lokijs "^1.5.12"
     node-forge "^1.2.1"
