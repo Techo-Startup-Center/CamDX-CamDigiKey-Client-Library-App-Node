@@ -16,6 +16,19 @@ router.post('/', async (req, res) => {
   }
 })
 
+router.post('/user-face', async (req, res) => {
+  const accessToken = req.body.accessToken;
+  if (!accessToken || accessToken =='') {
+    return res.status(400).json({ error: 'Invalid Access Token' })
+  }
+  
+  try {
+    return res.status(200).json(await CamDigiKeyClient.getUserFace(accessToken))
+  } catch (err) {
+    return res.status(500).json({ error: err.message })
+  }
+})
+
 router.get('/login-token', async (req, res) => {
   try {
     return res.status(200).json(await CamDigiKeyClient.getLoginToken())
