@@ -1,6 +1,6 @@
 {
   "name": "camdx-camdigikey-client-library-app-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "app.js",
   "author": "Techo Startup Center",
   "license": "MIT",
@@ -9,7 +9,7 @@
     "dev": "nodemon app.js"
   },
   "dependencies": {
-    "camdigikey-client": "./camdigikey-client-library-node",
+    "camdigikey-client": "https://github.com/Techo-Startup-Center/camdigikey-client-library-node",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2"
