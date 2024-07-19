@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  camdigkey-client-library-app:
+    container_name: camdigkey-client-library-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./keystore/:/usr/src/app/keystore/"
+    env_file:
+      - .env
