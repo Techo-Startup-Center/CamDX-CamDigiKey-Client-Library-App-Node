@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
   }
   
   try {
-    return res.status(200).json(await CamDigiKeyClient.validateJwt(accessToken))
+    return res.status(200).json(await CamDigiKeyClient.default.validateJwt(accessToken))
   } catch (err) {
     return res.status(500).json({ error: err.message })
   }
@@ -23,7 +23,7 @@ router.post('/user-face', async (req, res) => {
   }
   
   try {
-    return res.status(200).json(await CamDigiKeyClient.getUserFace(accessToken))
+    return res.status(200).json(await CamDigiKeyClient.default.getUserFace(accessToken))
   } catch (err) {
     return res.status(500).json({ error: err.message })
   }
@@ -31,7 +31,7 @@ router.post('/user-face', async (req, res) => {
 
 router.get('/login-token', async (req, res) => {
   try {
-    return res.status(200).json(await CamDigiKeyClient.getLoginToken())
+    return res.status(200).json(await CamDigiKeyClient.default.getLoginToken())
   } catch (err) {
     return res.status(500).json({ error: err.message })
   }
@@ -44,7 +44,7 @@ router.post('/access-token', async (req, res) => {
   }
 
   try {
-    return res.status(200).json(await CamDigiKeyClient.getUserAccessToken(authToken))
+    return res.status(200).json(await CamDigiKeyClient.default.getUserAccessToken(authToken))
   } catch (err) {
     return res.status(500).json({ error: err.message })
   }
@@ -57,7 +57,7 @@ router.post('/refresh-access-token', async (req, res) => {
   }
   
   try {
-    return res.status(200).json(await CamDigiKeyClient.refreshUserAccessToken(accessToken))
+    return res.status(200).json(await CamDigiKeyClient.default.refreshUserAccessToken(accessToken))
   } catch (err) {
     return res.status(500).json({ error: err.message })
   }
@@ -70,7 +70,7 @@ router.post('/logout-access-token', async (req, res) => {
   }
   
   try {
-    return res.status(200).json(await CamDigiKeyClient.logoutAccessToken(accessToken))
+    return res.status(200).json(await CamDigiKeyClient.default.logoutAccessToken(accessToken))
   } catch (err) {
     return res.status(500).json({ error: err.message })
   }
@@ -79,7 +79,7 @@ router.post('/logout-access-token', async (req, res) => {
 
 router.get('/organization-access-token', async (req, res) => {
   try {
-    return res.status(200).json(await CamDigiKeyClient.getOrganizationAccessToken())
+    return res.status(200).json(await CamDigiKeyClient.default.getOrganizationAccessToken())
   } catch (err) {
     return res.status(500).json({ error: err.message })
   }
@@ -95,7 +95,7 @@ router.post('/lookup-user-profile', async (req, res) => {
   }
 
   try {
-    return res.status(200).json(await CamDigiKeyClient.lookupUserProfile(accessToken, personalCode))
+    return res.status(200).json(await CamDigiKeyClient.default.lookupUserProfile(accessToken, personalCode))
   } catch (err) {
     return res.status(500).json({ error: err.message })
   }
@@ -108,7 +108,7 @@ router.post('/verify-user-profile', async (req, res) => {
   }
 
   try {
-    return res.status(200).json(await CamDigiKeyClient.verifyAccountToken(accountToken))
+    return res.status(200).json(await CamDigiKeyClient.default.verifyAccountToken(accountToken))
   } catch (err) {
     return res.status(500).json({ error: err.message })
   }
